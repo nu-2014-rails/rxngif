@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   
   # CREATE
   get "/new_gif" => "gifs#new"
+  get "/create_gif" => "gifs#create"
+  
+  # READ
+  get "/gifs/:id" => "gifs#show"
   
   
   # The priority is based upon order of creation: first created -> highest priority.

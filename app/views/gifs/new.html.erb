@@ -2,11 +2,11 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <h1>Add a new gif</h1>
-      <form class="form-horizontal">
+      <form action="/create_gif" class="form-horizontal">
         <div class="form-group">
           <label for="image_url" class="col-sm-4 control-label">Image URL:</label>
           <div class="col-sm-8">
-            <input type="text" id="image_url" class="form-control" placeholder="http://link-to-your-gif.com">
+            <input type="text" id="image_url" class="form-control" placeholder="http://link-to-your-gif.com" name="image_url">
           </div>
         </div>
       </form>
