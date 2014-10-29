@@ -7,6 +7,13 @@ Rails.application.routes.draw do
   # READ
   get "/gifs/:id" => "gifs#show"
   
+  # UPDATE
+  get "/gifs/:id/edit" => "gifs#edit"
+  get "/gifs/:id/update" => "gifs#update"
+  
+  # DESTROY
+  get "/gifs/:id/destroy" => "gifs#destroy"
+  
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
