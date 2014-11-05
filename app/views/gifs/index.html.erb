@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Listing Gifs</h1>
+    </div>
+    
+    <% @gifs.each do |gif| %>
+      <div class="col-md-3">
+        <a href="/gifs/<%= gif.id %>" class="thumbnail">
+          <img src="<%= gif.image_url %>">
+        </a>
+      </div>
+    <% end %>
+    
+  
+ 
+  </div>
+</div>

@@ -32,4 +32,8 @@ class GifsController < ApplicationController
     
     redirect_to "/new_gif"
   end
+  
+  def index
+    @gifs = Gif.all
+  end
 end
