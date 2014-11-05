@@ -7,26 +7,62 @@
         <a href="/gifs/<%= @gif.id %>/destroy">Destroy</a> |
         <a href="/gifs">Back to index</a>
       </div>
+      
+      <h4>Tags</h4>
+      
+      <div>
+        <% @gif.tag_associations.each do |ta| %>
+          <a href="/tags/<%= ta.tag.id %>"><%= ta.tag.name %></a>
+        <% end %>
+      </div>
+      
+      <form action="/create_tag_association">
+        <div>
+          <input id="gif_id" name="gif_id" type="hidden" value="<%= @gif.id %>" />
+        </div>
+        <div>
+          <select name="tag_id">
+            <% Tag.all.each do |tag| %>
+              <option value="<%= tag.id %>"><%= tag.name %></option>
+            <% end %>
+          </select>
+        </div>
+        <div>
+          <input type="submit">
+        </div>
+      </form>
+
+      
+      <h1>New Comment</h1>
+
+      <form action="/create_comment">
+        <div class="form-group">
+          <input id="contents" name="contents" type="text" class="form-control"/>
+          <input type="hidden" name="gif_id" value="<%= @gif.id %>">
+        </div>
+      </form>
+      
+    
+      
       <div class="comments">
         <h2>Comments</h2>
-        <div class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object" src="http://ecx.images-amazon.com/images/I/41WSuOQnn9L._SL500_SS100_.jpg" alt="batman-image">
-          </a>
-          <div class="media-body">
-            <h4 class="media-heading">Batman</h4>
-            <div>Wow, look at him go.</div>
-          </div>
-        </div> 
-        <div class="media">
-          <a class="pull-left" href="#">
-            <img class="media-object" src="http://www.realclearpolitics.com/articles/topicons/ann_coulter.jpg" alt="ann-coulter-image">
-          </a>
-          <div class="media-body">
-            <h4 class="media-heading">Ann Coulter</h4>
-            <div>Those hips don't lie.</div>
-          </div>
-        </div>
+        
+        <% @gif.comments.each do |comment| %>
+          <div class="media">
+            <a class="pull-left" href="#">
+              <img class="media-object" src="http://ecx.images-amazon.com/images/I/41WSuOQnn9L._SL500_SS100_.jpg" alt="batman-image">
+            </a>
+            <div class="media-body">
+              <h4 class="media-heading">Batman</h4>
+              <div><%= comment.contents %></div>
+              <div><a href="/comments/<%= comment.id %>/destroy">Destroy</a></div>
+            </div>
+          </div> 
+        <% end %>
+        
+        
+        
+      
       </div>
     </div>
   </div>

@@ -1,0 +1,17 @@
+<h1>Editing Tag Association #<%= @tag_association.id %></h1>
+
+<form action="/tag_associations/<%= @tag_association.id %>/update">
+  <div>
+    <label for="gif_id">gif_id</label><br />
+    <input id="gif_id" name="gif_id" value="<%= @tag_association.gif_id  %>" type="text" />
+  </div>
+  <div>
+    <label for="tag_id">tag_id</label><br />
+    <input id="tag_id" name="tag_id" value="<%= @tag_association.tag_id  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

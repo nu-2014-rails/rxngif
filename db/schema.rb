@@ -11,10 +11,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141029004806) do
+ActiveRecord::Schema.define(version: 20141105024123) do
+
+  create_table "comments", force: true do |t|
+    t.string   "contents"
+    t.integer  "gif_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gifs", force: true do |t|
     t.string   "image_url"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tag_associations", force: true do |t|
+    t.integer  "gif_id"
+    t.integer  "tag_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

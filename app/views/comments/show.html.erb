@@ -1,0 +1,13 @@
+<h1>Comment #<%= @comment.id %></h1>
+
+<div>
+  <strong>Contents</strong>:<br />
+  <p><%= @comment.contents %></p>
+</div>
+<div>
+  <strong>Gif</strong>:<br />
+  <p><%= @comment.gif_id %></p>
+</div>
+
+<a href="/comments/<%= @comment.id %>/edit">Edit</a> |
+<a href="/comments/<%= @comment.id %>/destroy">Destroy</a>

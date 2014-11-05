@@ -1,0 +1,21 @@
+<h1>New Comment</h1>
+
+<form action="/create_comment">
+  <div>
+    <label for="contents">contents</label><br />
+    <input id="contents" name="contents" type="text" />
+  </div>
+  <div>
+    <label for="gif_id">gif_id</label><br />    
+    <select id="gif_id" name="gif_id">
+      <% Gif.all.each do |gif| %>
+        <option value="<%= gif.id %>"><%= gif.image_url %></option>
+      <% end %>
+    </select>
+    
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+

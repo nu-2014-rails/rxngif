@@ -1,0 +1,29 @@
+<h1>Tag associations</h1>
+
+<p><a href="/new_tag_association">Add a New Tag Association</a></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Gif</th>
+      <th>Tag</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+  <% @tag_associations.each do |tag_association| %>
+    <tr>
+          <td><%= tag_association.gif_id %></td>
+          <td><%= tag_association.tag_id %></td>
+          <td><a href="/tag_associations/<%= tag_association.id %>">Show</a>
+        </td>
+      <td><a href="/tag_associations/<%= tag_association.id %>/edit">Edit</a></td>
+      <td><a href="/tag_associations/<%= tag_association.id %>/destroy">Destroy</a></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+

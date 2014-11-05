@@ -1,5 +1,56 @@
 Rails.application.routes.draw do
   
+  # Routes for the Tag_association resource:
+  # CREATE
+  get '/new_tag_association' => 'tag_associations#new'
+  get '/create_tag_association' => 'tag_associations#create'
+
+  # READ
+  get '/tag_associations' => 'tag_associations#index'
+  get '/tag_associations/:id' => 'tag_associations#show'
+
+  # UPDATE
+  get '/tag_associations/:id/edit' => 'tag_associations#edit'
+  get '/tag_associations/:id/update' => 'tag_associations#update'
+
+  # DELETE
+  get '/tag_associations/:id/destroy' => 'tag_associations#destroy'
+  #------------------------------
+
+  # Routes for the Tag resource:
+  # CREATE
+  get '/new_tag' => 'tags#new'
+  get '/create_tag' => 'tags#create'
+
+  # READ
+  get '/tags' => 'tags#index'
+  get '/tags/:id' => 'tags#show'
+
+  # UPDATE
+  get '/tags/:id/edit' => 'tags#edit'
+  get '/tags/:id/update' => 'tags#update'
+
+  # DELETE
+  get '/tags/:id/destroy' => 'tags#destroy'
+  #------------------------------
+
+  # Routes for the Comment resource:
+  # CREATE
+  get '/new_comment' => 'comments#new'
+  get '/create_comment' => 'comments#create'
+
+  # READ
+  get '/comments' => 'comments#index'
+  get '/comments/:id' => 'comments#show'
+
+  # UPDATE
+  get '/comments/:id/edit' => 'comments#edit'
+  get '/comments/:id/update' => 'comments#update'
+
+  # DELETE
+  get '/comments/:id/destroy' => 'comments#destroy'
+  #------------------------------
+
   # CREATE
   get "/new_gif" => "gifs#new"
   get "/create_gif" => "gifs#create"

@@ -1,0 +1,17 @@
+<h1>Editing Comment #<%= @comment.id %></h1>
+
+<form action="/comments/<%= @comment.id %>/update">
+  <div>
+    <label for="contents">contents</label><br />
+    <input id="contents" name="contents" value="<%= @comment.contents  %>" type="text" />
+  </div>
+  <div>
+    <label for="gif_id">gif_id</label><br />
+    <input id="gif_id" name="gif_id" value="<%= @comment.gif_id  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+

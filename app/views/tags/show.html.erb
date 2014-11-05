@@ -1,0 +1,14 @@
+<h1><%= @tag.name %></h1>
+
+<a href="/tags/<%= @tag.id %>/edit">Edit</a> |
+<a href="/tags/<%= @tag.id %>/destroy">Destroy</a>
+
+<div class="container">
+  <div class="row">
+    <% @tag.tag_associations.each do |ta| %>
+      <div class="col-sm-3">
+        <a href="/gifs/<%= ta.gif.id %>"><img src="<%= ta.gif.image_url %>"></a>
+      </div>
+    <% end %>
+  </div>
+</div>

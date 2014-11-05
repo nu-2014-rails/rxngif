@@ -1,0 +1,13 @@
+<h1>Tag Association #<%= @tag_association.id %></h1>
+
+<div>
+  <strong>Gif</strong>:<br />
+  <p><%= @tag_association.gif_id %></p>
+</div>
+<div>
+  <strong>Tag</strong>:<br />
+  <p><%= @tag_association.tag_id %></p>
+</div>
+
+<a href="/tag_associations/<%= @tag_association.id %>/edit">Edit</a> |
+<a href="/tag_associations/<%= @tag_association.id %>/destroy">Destroy</a>

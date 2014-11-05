@@ -1,0 +1,13 @@
+<h1>Editing Tag #<%= @tag.id %></h1>
+
+<form action="/tags/<%= @tag.id %>/update">
+  <div>
+    <label for="name">name</label><br />
+    <input id="name" name="name" value="<%= @tag.name  %>" type="text" />
+  </div>
+  <div>
+    <input type="submit">
+  </div>
+</form>
+
+
