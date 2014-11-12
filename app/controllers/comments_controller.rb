@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new
     @comment.contents = params[:contents]
     @comment.gif_id = params[:gif_id]
+    @comment.user_id = cookies[:user_id].to_i
 
     if @comment.save
       redirect_to "/gifs/#{ @comment.gif_id }"

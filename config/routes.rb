@@ -1,5 +1,28 @@
 Rails.application.routes.draw do
   
+  get "/" => "gifs#index"
+  get "/login" => "sessions#new"
+  get "/sessions/create" => "sessions#create"
+  get "/logout" => "sessions#destroy"
+  
+  # Routes for the User resource:
+  # CREATE
+  get '/new_user' => 'users#new'
+  get '/create_user' => 'users#create'
+
+  # READ
+  get '/users' => 'users#index'
+  get '/users/:id' => 'users#show'
+
+  # UPDATE
+  get '/users/:id/edit' => 'users#edit'
+  get '/users/:id/update' => 'users#update'
+
+  # DELETE
+  get '/users/:id/destroy' => 'users#destroy'
+  #------------------------------
+  
+  
   # Routes for the Tag_association resource:
   # CREATE
   get '/new_tag_association' => 'tag_associations#new'

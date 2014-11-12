@@ -1,4 +1,12 @@
 class GifsController < ApplicationController
+  before_action :check_if_signed_in
+  
+  def check_if_signed_in
+    unless session[:user_id].present?
+      redirect_to "/login", notice: "sign in and make sure cookies are enabled"
+    end
+  end
+  
   def new
   end
   

@@ -53,7 +53,7 @@
               <img class="media-object" src="http://ecx.images-amazon.com/images/I/41WSuOQnn9L._SL500_SS100_.jpg" alt="batman-image">
             </a>
             <div class="media-body">
-              <h4 class="media-heading">Batman</h4>
+              <h4 class="media-heading"><%= comment.user.name %></h4>
               <div><%= comment.contents %></div>
               <div><a href="/comments/<%= comment.id %>/destroy">Destroy</a></div>
             </div>

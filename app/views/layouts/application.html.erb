@@ -26,16 +26,31 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li class="#"><a href="#">All</a></li>
-        <li><a href="#">Filter by tag</a></li>
+        <li class="#"><a href="/gifs">All</a></li>
+        <li><a href="/tags">Filter by tag</a></li>
 
       </ul>
-
+      <ul class="nav navbar-nav navbar-right">
+        <% if session[:user_id].present? %>
+          <% u = User.find_by_id(session[:user_id].to_i) %>
+          <li><a href="#">Signed in as <%= u.name %></a></li>
+          <li><a href="/logout">Logout</a></li>
+        <% else %>
+          <li><a href="/login">Login</a></li>
+        <% end %>
+      </ul>
 
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
-  
+
+<% if notice %>
+  <div class="container">
+    <div class="alert alert-info alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button><%= notice %>
+    </div>
+  </div>
+<% end %>
   
 <%= yield %>
 
